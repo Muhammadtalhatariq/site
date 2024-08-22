@@ -51,7 +51,8 @@ const LatestWorks = () => {
               data-xxl-margin="54"
             >
               <div className="owl-stage-outer owl-height">
-                <div className="flex gap-7 overflow-x-auto">
+                <div          
+                className="flex gap-7 overflow-x-auto">
                   <div className="owl-item active">
                     <div className="w-96">
                       <div className="thumbnail-media">
