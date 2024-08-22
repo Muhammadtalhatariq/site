@@ -6,11 +6,9 @@ const Blog = () => {
 
   return (
     <section className="section section-md bg-right" id="blog">
-      <div 
-
-      className="bg-item-1 overflow-hidden">
-         <img className="h-[82rem]" src="images/bg-pattern-1.jpg" alt="" />
-         </div>
+      <div className="bg-item-1 overflow-hidden hidden md:flex">
+        <img className="h-[82rem]" src="images/bg-pattern-1.jpg" alt="" />
+      </div>
       <div className="bg-item-2 bg-secondary"></div>
       <div className="container">
         <h2

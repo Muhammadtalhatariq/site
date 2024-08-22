@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="col-sm-6 col-xxl-5">
             <div className="image-social">
               <a
-                className="image-social-icon mdi-facebook-messenger"
+                className="image-social-icon "
                 href="#"
               ></a>
               <img
@@ -24,17 +24,19 @@ const Footer = () => {
             <div className="footer-inner">
               <div className="logo">
                 <a className="relative " href="index.html  ">
-                  <div className="absolute -left-[7.7rem] -top-9  hover:bg-gray-100 bg-red-500 p-4">
+                  <div className="absolute -left-[7.7rem] -top-[3.8rem]  hover:bg-gray-100 bg-red-500 p-4">
                     <FaFacebookMessenger className="text-slate-200" size={30} />
                   </div>
 
-                  <img
-                    className=""
-                    src="images/logo.svg"
-                    alt="Booo"
-                    width="114"
-                    height="33"
-                  />
+
+                  {/* <div className="text-white">
+                    <img
+                      src="images/logo.svg"
+                      alt="Booo"
+                      width="114"
+                      height="33"
+                    />
+                  </div> */}
                 </a>
               </div>
               <form

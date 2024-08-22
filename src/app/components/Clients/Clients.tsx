@@ -9,11 +9,8 @@ import { IoArrowDown } from "react-icons/io5";
 const Clients = () => {
   return (
     <section className="section section-md bg-left" id="testimonials">
-      <div
-        className="bg-item bg-image animated fadeInLeftBig"
-        data-animate=""
-      >
-         <img src="images/bg-pattern-1.jpg" alt="" />
+      <div className="bg-item hidden md:flex bg-image animated fadeInLeftBig" data-animate="">
+        <img src="images/bg-pattern-1.jpg" alt="" />
       </div>
       <div className="container">
         <div className="row ">
@@ -174,7 +171,7 @@ const Clients = () => {
                   role="button"
                   aria-label="Next slide"
                 >
-                  <FaArrowUp/>
+                  <FaArrowUp />
                 </button>
                 <div className="swiper-pagination swiper-pagination-fraction">
                   <span className="swiper-pagination-current">01</span>/
@@ -187,7 +184,7 @@ const Clients = () => {
                   role="button"
                   aria-label="Previous slide"
                 >
-                  <IoArrowDown/>
+                  <IoArrowDown />
                 </button>
               </div>
             </div>

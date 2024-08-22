@@ -8,7 +8,7 @@ const AboutUs = () => {
       className="section section-md bg-left-1 text-center text-sm-left"
       id="about-me"
     >
-      <div className="bg-item bg-image overflow-hidden" data-animate="">
+      <div className="bg-item bg-image overflow-hidden hidden md:flex" data-animate="">
         {" "}
         <img src="images/bg-pattern-1.jpg" alt="" />
       </div>
