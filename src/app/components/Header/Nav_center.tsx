@@ -2,7 +2,7 @@
 import React from 'react'
 import { FaFacebookMessenger } from "react-icons/fa6";
 
-export default function Nav_center() {
+const Nav_center = () => {
    return (
       <>
          <div className="navbar-cell navbar-cell-center ">
@@ -36,3 +36,4 @@ export default function Nav_center() {
       </>
    )
 }
+export default Nav_center

@@ -1,28 +1,60 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { FaFacebookMessenger } from "react-icons/fa6";
+import Link from "next/link";
+import { RiMenu2Fill } from "react-icons/ri";
+
+const nevItems = [
+  {
+    name: "About me",
+    path: "#about-me",
+  },
+  {
+    name: "Portfolio",
+    path: "#portfolio",
+  },
+  {
+    name: "Testimonials",
+    path: "#testimonials",
+  },
+  {
+    name: "Contact",
+    path: "#contact",
+  },
+  {
+    name: "Blog",
+    path: "#blog",
+  },
+];
+
 const Header = () => {
-  const [isActive, setIsActive] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [openMenu, setOpenMenu] = useState(false);
 
-  const toggleButton = () => {
-    setIsActive(!isActive);
+  const handleNav = () => {
+    setOpenMenu(!openMenu);
   };
 
-  const handleScroll = () => {
-    setScrollY(window.scrollY); // Track vertical scroll
-  };
+  // const [isActive, setIsActive] = useState(false);
+  // const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+  // const toggleButton = () => {
+  //   setIsActive(!isActive);
+  // };
 
-    // Clean up the event listener when component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  console.clear();
-  console.log(scrollY);
+  // const handleScroll = () => {
+  //   setScrollY(window.scrollY); // Track vertical scroll
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   // Clean up the event listener when component unmounts
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+  // console.clear();
+  // console.log(scrollY);
   return (
     <header
       className="section rd-navbar-wrap rd-navbar-wrap-absolute"
@@ -30,7 +62,7 @@ const Header = () => {
     >
       <nav className="rd-navbar rd-navbar-original rd-navbar-fullwidth">
         <div className="navbar-container ">
-          <div className="navbar-cell navbar-subpanel-contact">
+          {/* <div className="navbar-cell navbar-subpanel-contact">
             <div
               className={
                 scrollY > 100 ? "contact-btn-fixed  " : " navbar-contact"
@@ -81,8 +113,98 @@ const Header = () => {
                 ></div>
               </div>
             </div>
+          </div> */}
+          {/* heade  */}
+
+          <div className=" bg-white font-sans z-50 fixed sm:h-2 h-12 w-full  pt-6 px-4 sm:px-24 sm:p-12 flex justify-between items-center ">
+            <div className="flex items-center">
+              <div className="navbar-panel hidden sm:flex ">
+                <button
+                  className="navbar-switch mdi-menu novi-icon"
+                  data-multi-switch=""
+                ></button>
+                <div className="navbar-logo">
+                  <a className="navbar-logo-link" href="index.html">
+                    <img
+                      className="navbar-logo-default"
+                      src="https://ld-wt73.template-help.com/wt_prod-29297/images/logo-default-228x67.png"
+                      alt="Booo"
+                      width="114"
+                      height="33"
+                    />
+                    <img
+                      className="navbar-logo-inverse"
+                      src="images/logo-inverse-228x67.png"
+                      alt="Booo"
+                      width="114"
+                      height="33"
+                    />
+                  </a>
+                </div>
+              </div>
+             
+            </div>
+            <div>
+              <ul className="hidden md:flex list-none gap-5 ">
+                {nevItems.map((item) => (
+                  <li
+                    className="text-black duration-1000 navbar-navigation-root-item"
+                    key={item.path}
+                  >
+                    <Link
+                      className="navbar-navigation-root-link"
+                      href={item.path}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+
+                <li className="navbar-navigation-root-item">
+                  <div>
+                    <div>
+                      <div className="text-green-500 hover:text-pink-300 cursor-pointer">
+                        <FaFacebookMessenger size={30} />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div onClick={handleNav} className="md:hidden flex justify-between ">
+            <div className="cursor-pointer px-2 text-black">
+                <RiMenu2Fill size={20} />
+              </div>
+              <div >
+                {openMenu && (
+                  <div className="fixed h-full w-80 list-none gap-5 bg-white shadow-lg text-black top-10 left-0 animate-slide-down duration-1000">
+                    <ul className="flex flex-col pl-3 gap-1">
+                      {nevItems.map((item) => (
+                        <li
+                          className="py-2 text-black duration-1000 navbar-navigation-root-item"
+                          key={item.path}
+                        >
+                          <Link  className="navbar-navigation-root-link"  href={item.path}>{item.name}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              <li className="navbar-navigation-root-item">
+                <div>
+                  <div>
+                    <div className="text-green-500 hover:text-pink-300 cursor-pointer">
+                      <FaFacebookMessenger size={20} />
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </div>
           </div>
-          <div
+
+          {/* <div
             className={
               scrollY > 100
                 ? "fixed navbar-cell navbar-cell-center z-10 right-0 bg-white h-20  transition duration-700 ease-in-out "
@@ -154,7 +276,7 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </nav>
     </header>
