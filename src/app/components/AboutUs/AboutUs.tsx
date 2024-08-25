@@ -5,17 +5,17 @@ const AboutUs = () => {
 
   return (
     <section
-      className="section section-md bg-left-1 text-center text-sm-left"
+      className="section section-md bg-left-1 text-center text-sm-left "
       id="about-me"
     >
-      <div className="bg-item bg-image overflow-hidden hidden md:flex" data-animate="">
+      <div className="bg-item   overflow-hidden hidden md:flex" data-animate="">
       
         <img src="images/bg-pattern-1.jpg" alt="" />
       </div>
-      <div className="container">
-        <div className="row row-30">
-          <div className="col-sm-6">
-            <div className="image-container" data-animate="">
+      <div className="container ">
+        <div className="row row-30 ">
+          <div className="col-sm-6 ">
+            <div className=" " data-animate="">
               <img
                 className="image"
                 src="images/image-01-424x491.jpg"

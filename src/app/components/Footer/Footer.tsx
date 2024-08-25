@@ -48,7 +48,7 @@ const Footer = () => {
                 </div>
               </div>
               <form
-                className="rd-form rd-form-inline rd-mailform animated fadeInUp"
+                className="flex justify-center items-center "
                 data-form-output="newsletter-sample"
                 data-form-type="subscribe"
                 method="post"
@@ -58,7 +58,7 @@ const Footer = () => {
               >
                 <div className="form-group">
                   <input
-                    className=" form-control form-control-sm form-control-has-validation form-control-last-child"
+                    className="mt-4 form-control form-control-sm form-control-has-validation form-control-last-child"
                     type="email"
                     name="email"
                     placeholder="E-mail"
@@ -67,7 +67,7 @@ const Footer = () => {
                   />
                   <span className="form-validation"></span>
                 </div>
-                <button className="btn btn-md btn-secondary p-3" type="submit">
+                <button className=" btn px-4 py-3 btn-secondary" type="submit">
                   Subscribe
                 </button>
               </form>
@@ -124,7 +124,7 @@ const Footer = () => {
                 <a className="image-link" href="#">
                   <img
                     className="image"
-                    src="images/logo-08-102x20.png"
+                    src="https://ld-wt73.template-help.com/wt_prod-29297/images/logo-08-102x20.png"
                     alt=""
                     width="102"
                     height="20"

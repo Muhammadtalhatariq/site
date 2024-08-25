@@ -64,7 +64,7 @@ const Header = () => {
         <div className="">
 
           {/* sub  */}
-          <div className="navbar-cell navbar-subpanel-contact">
+          {/* <div className="navbar-cell navbar-subpanel-contact">
             <div
               className={
                 scrollY > 100 ? "contact-btn-fixed  " : " navbar-contact"
@@ -115,7 +115,7 @@ const Header = () => {
                 ></div>
               </div>
             </div>
-          </div>
+          </div> */}
 
 
           {/* header  */}
