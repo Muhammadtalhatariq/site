@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookMessenger } from "react-icons/fa6";
+import { IoIosArrowUp } from "react-icons/io";
 const Footer = () => {
   return (
     <>
@@ -20,20 +21,31 @@ const Footer = () => {
           <div className="col-md-10 col-lg-6 col-xl-5 col-xxl-3 offset-xxl-1">
             <div className="footer-inner">
               <div className="logo">
-                <a className="relative " href="index.html  ">
+                <div className="relative " href="index.html  ">
                   <div className="absolute -left-[7.7rem] -top-[3.8rem]  hover:bg-gray-100 bg-red-500 p-4">
                     <FaFacebookMessenger className="text-slate-200" size={30} />
                   </div>
 
-                  {/* <div className="text-white">
-                    <img
-                      src="images/logo.svg"
-                      alt="Booo"
-                      width="114"
-                      height="33"
-                    />
-                  </div> */}
-                </a>
+                  <div className="text-white">
+                    <div className=" navbar-panel">
+                      <button
+                        className="navbar-switch "
+                        data-multi-switch=""
+                      ></button>
+                      <div className="navbar-logo">
+                        <a className="navbar-logo-link" href="index.html">
+                          <img
+                            className=""
+                            src="https://ld-wt73.template-help.com/wt_prod-29297/images/logo-inverse-228x67.png"
+                            alt="Booo"
+                            width="114"
+                            height="33"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <form
                 className="rd-form rd-form-inline rd-mailform animated fadeInUp"
@@ -102,7 +114,7 @@ const Footer = () => {
                 <a className="image-link" href="#">
                   <img
                     className="image"
-                    src="images/logo-07-81x20.png"
+                    src="https://ld-wt73.template-help.com/wt_prod-29297/images/logo-07-81x20.png"
                     alt=""
                     width="81"
                     height="20"
@@ -134,6 +146,11 @@ const Footer = () => {
                 <span>Booo</span>
                 <span>. All rights reserved.</span>
               </p>
+            </div>
+            <div className="absolute bg-green-500 size-10 right-10 flex justify-center items-center">
+              <a href="/">
+                <IoIosArrowUp className="text-white" size={20} />
+              </a>
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { FaPlay } from "react-icons/fa";
 const Intro = () => {
   return (
     <section className="section intro bg-100">
-      <div className="intro-inner">
+      <div className="intro-inner mt-16 lg:-mt-8">
         <div className="row row-30 align-items-center">
           <div className="col-md-4 col-xxl-3 offset-xl-1 offset-xxl-2 text-center text-md-left">
             <h1 className="intro-title">

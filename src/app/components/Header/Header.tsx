@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { FaFacebookMessenger } from "react-icons/fa6";
 import Link from "next/link";
-import { RiMenu2Fill } from "react-icons/ri";
-
+import { IoMdMenu } from "react-icons/io";
+import { HiOutlineDotsVertical } from "react-icons/hi";
 const nevItems = [
   {
     name: "About me",
@@ -34,35 +34,37 @@ const Header = () => {
     setOpenMenu(!openMenu);
   };
 
-  // const [isActive, setIsActive] = useState(false);
-  // const [scrollY, setScrollY] = useState(0);
+  const [isActive, setIsActive] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
-  // const toggleButton = () => {
-  //   setIsActive(!isActive);
-  // };
+  const toggleButton = () => {
+    setIsActive(!isActive);
+  };
 
-  // const handleScroll = () => {
-  //   setScrollY(window.scrollY); // Track vertical scroll
-  // };
+  const handleScroll = () => {
+    setScrollY(window.scrollY); // Track vertical scroll
+  };
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
 
-  //   // Clean up the event listener when component unmounts
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-  // console.clear();
-  // console.log(scrollY);
+    // Clean up the event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  console.clear();
+  console.log(scrollY);
   return (
     <header
-      className="section rd-navbar-wrap rd-navbar-wrap-absolute"
+      className=" rd-navbar-wrap rd-navbar-wrap-absolute "
       data-preset=""
     >
       <nav className="rd-navbar rd-navbar-original rd-navbar-fullwidth">
-        <div className="navbar-container ">
-          {/* <div className="navbar-cell navbar-subpanel-contact">
+        <div className="">
+
+          {/* sub  */}
+          <div className="navbar-cell navbar-subpanel-contact">
             <div
               className={
                 scrollY > 100 ? "contact-btn-fixed  " : " navbar-contact"
@@ -113,12 +115,15 @@ const Header = () => {
                 ></div>
               </div>
             </div>
-          </div> */}
-          {/* heade  */}
+          </div>
 
-          <div className=" bg-white font-sans z-50 fixed sm:h-2 h-12 w-full  pt-6 px-4 sm:px-24 sm:p-12 flex justify-between items-center ">
-            <div className="flex items-center">
-              <div className="navbar-panel hidden sm:flex ">
+
+          {/* header  */}
+
+          <div className="font-sans z-50 fixed lg:h-2 h-20 w-full bg-white  flex justify-between items-center ">
+           <div className="w-full flex justify-between items-center pt-16 bg-white">
+           <div >
+              <div className=" navbar-panel hidden lg:flex pl-20 ">
                 <button
                   className="navbar-switch mdi-menu novi-icon"
                   data-multi-switch=""
@@ -142,10 +147,9 @@ const Header = () => {
                   </a>
                 </div>
               </div>
-             
             </div>
             <div>
-              <ul className="hidden md:flex list-none gap-5 ">
+              <ul className="hidden lg:flex list-none gap-5 ">
                 {nevItems.map((item) => (
                   <li
                     className="text-black duration-1000 navbar-navigation-root-item"
@@ -171,20 +175,30 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-            <div onClick={handleNav} className="md:hidden flex justify-between ">
-            <div className="cursor-pointer px-2 text-black">
-                <RiMenu2Fill size={20} />
+           </div>
+            {/* mbl view  */}
+            <div
+              onClick={handleNav}
+              className="lg:hidden flex justify-between bg-white "
+            >
+              <div className="cursor-pointer absolute  left-5 text-black hover:text-green-500">
+                <IoMdMenu size={30} />
               </div>
-              <div >
+              <div>
                 {openMenu && (
-                  <div className="fixed h-full w-80 list-none gap-5 bg-white shadow-lg text-black top-10 left-0 animate-slide-down duration-1000">
+                  <div className="fixed h-full w-80 list-none gap-5 bg-white shadow-lg text-black top-20 translate-x-0 duration-700 ease-out left-0 animate-slide-down ">
                     <ul className="flex flex-col pl-3 gap-1">
                       {nevItems.map((item) => (
                         <li
-                          className="py-2 text-black duration-1000 navbar-navigation-root-item"
+                          className="py-3 text-black duration-1000 navbar-navigation-root-item"
                           key={item.path}
                         >
-                          <Link  className="navbar-navigation-root-link"  href={item.path}>{item.name}</Link>
+                          <Link
+                            className="navbar-navigation-root-link"
+                            href={item.path}
+                          >
+                            {item.name}
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -192,91 +206,52 @@ const Header = () => {
                 )}
               </div>
 
-              <li className="navbar-navigation-root-item">
+              <li>
+                <div className=" absolute left-36 md:left-[50%]">
+                  <button
+                    className="navbar-switch mdi-menu novi-icon"
+                    data-multi-switch=""
+                  ></button>
+                  <div className="navbar-logo">
+                    <a className="navbar-logo-link" href="index.html">
+                      <img
+                        className="navbar-logo-default"
+                        src="https://ld-wt73.template-help.com/wt_prod-29297/images/logo-default-228x67.png"
+                        alt="Booo"
+                        width="114"
+                        height="33"
+                      />
+                      <img
+                        className="navbar-logo-inverse"
+                        src="images/logo-inverse-228x67.png"
+                        alt="Booo"
+                        width="114"
+                        height="33"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li className="">
+                <div>
+                  <div>
+                    <div className="text-black hover:text-pink-300 cursor-pointer">
+                      <HiOutlineDotsVertical />
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li className="flex items-center pr-2">
                 <div>
                   <div>
                     <div className="text-green-500 hover:text-pink-300 cursor-pointer">
-                      <FaFacebookMessenger size={20} />
+                      <FaFacebookMessenger size={15} />
                     </div>
                   </div>
                 </div>
               </li>
             </div>
           </div>
-
-          {/* <div
-            className={
-              scrollY > 100
-                ? "fixed navbar-cell navbar-cell-center z-10 right-0 bg-white h-20  transition duration-700 ease-in-out "
-                : "navbar-cell navbar-cell-center "
-            }
-          >
-            <div className="navbar-panel ">
-              <button
-                className="navbar-switch mdi-menu novi-icon"
-                data-multi-switch=""
-              ></button>
-              <div className="navbar-logo">
-                <a className="navbar-logo-link" href="index.html">
-                  <img
-                    className="navbar-logo-default"
-                    src="https://ld-wt73.template-help.com/wt_prod-29297/images/logo-default-228x67.png"
-                    alt="Booo"
-                    width="114"
-                    height="33"
-                  />
-                  <img
-                    className="navbar-logo-inverse"
-                    src="images/logo-inverse-228x67.png"
-                    alt="Booo"
-                    width="114"
-                    height="33"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="navbar-sidebar ">
-              <ul className="navbar-navigation rd-navbar-nav">
-                <li className="navbar-navigation-root-item">
-                  <a className="navbar-navigation-root-link" href="#about-me">
-                    About me
-                  </a>
-                </li>
-                <li className="navbar-navigation-root-item">
-                  <a className="navbar-navigation-root-link" href="#portfolio">
-                    Portfolio
-                  </a>
-                </li>
-                <li className="navbar-navigation-root-item">
-                  <a
-                    className="navbar-navigation-root-link"
-                    href="#testimonials"
-                  >
-                    Testimonials
-                  </a>
-                </li>
-                <li className="navbar-navigation-root-item">
-                  <a className="navbar-navigation-root-link" href="#contact">
-                    Contact
-                  </a>
-                </li>
-                <li className="navbar-navigation-root-item">
-                  <a className="navbar-navigation-root-link" href="#blog">
-                    Blog
-                  </a>
-                </li>
-                <li className="navbar-navigation-root-item">
-                  <div>
-                    <div>
-                      <div className="text-green-500 hover:text-pink-300 cursor-pointer">
-                        <FaFacebookMessenger size={30} />
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div> */}
         </div>
       </nav>
     </header>
