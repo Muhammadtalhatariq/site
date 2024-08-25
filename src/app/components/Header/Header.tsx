@@ -1,23 +1,55 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { FaFacebookMessenger } from "react-icons/fa6";
 const Header = () => {
+  const [isActive, setIsActive] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  const toggleButton = () => {
+    setIsActive(!isActive);
+  };
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY); // Track vertical scroll
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  console.clear();
+  console.log(scrollY);
   return (
     <header
       className="section rd-navbar-wrap rd-navbar-wrap-absolute"
       data-preset=""
     >
       <nav className="rd-navbar rd-navbar-original rd-navbar-fullwidth">
-        <div className="navbar-container">
+        <div className="navbar-container ">
           <div className="navbar-cell navbar-subpanel-contact">
-            <div className="navbar-contact">
+            <div
+              className={
+                scrollY > 100 ? "contact-btn-fixed  " : " navbar-contact"
+              }
+            >
               <button
-                className="navbar-button navbar-contact-btn"
-                data-multi-switch=""
+                className={`rd-navbar-fullwidth navbar-contact-btn ${
+                  isActive ? "active" : ""
+                }`}
+                onClick={toggleButton}
               >
                 <span></span>
               </button>
-              <div className="navbar-contact-body">
-                <div className="navbar-contact-title h4">
+              <div
+                className={
+                  isActive ? "navbar-contact-active " : " navbar-contact-body "
+                }
+              >
+                <div className="navbar-contact-title h4  ">
                   Join My Newsletter
                 </div>
                 <form
@@ -50,7 +82,13 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <div className="navbar-cell navbar-cell-center ">
+          <div
+            className={
+              scrollY > 100
+                ? "fixed navbar-cell navbar-cell-center z-10 right-0 bg-white h-20  transition duration-700 ease-in-out "
+                : "navbar-cell navbar-cell-center "
+            }
+          >
             <div className="navbar-panel ">
               <button
                 className="navbar-switch mdi-menu novi-icon"
@@ -67,7 +105,7 @@ const Header = () => {
                   />
                   <img
                     className="navbar-logo-inverse"
-                    // src="images/logo-inverse-228x67.png"
+                    src="images/logo-inverse-228x67.png"
                     alt="Booo"
                     width="114"
                     height="33"
@@ -105,14 +143,16 @@ const Header = () => {
                     Blog
                   </a>
                 </li>
+                <li className="navbar-navigation-root-item">
+                  <div>
+                    <div>
+                      <div className="text-green-500 hover:text-pink-300 cursor-pointer">
+                        <FaFacebookMessenger size={30} />
+                      </div>
+                    </div>
+                  </div>
+                </li>
               </ul>
-            </div>
-          </div>
-          <div className="navbar-cell">
-            <div className="navbar-subpanel">
-              <div className="text-green-500 hover:text-pink-300 cursor-pointer">
-                <FaFacebookMessenger size={30} />
-              </div>
             </div>
           </div>
         </div>

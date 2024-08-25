@@ -7,10 +7,7 @@ const Footer = () => {
         <div className="row justify-content-center justify-content-lg-start">
           <div className="col-sm-6 col-xxl-5">
             <div className="image-social">
-              <a
-                className="image-social-icon "
-                href="#"
-              ></a>
+              <a className="image-social-icon " href="#"></a>
               <img
                 className="image"
                 src="images/image-11-787x516.jpg"
@@ -27,7 +24,6 @@ const Footer = () => {
                   <div className="absolute -left-[7.7rem] -top-[3.8rem]  hover:bg-gray-100 bg-red-500 p-4">
                     <FaFacebookMessenger className="text-slate-200" size={30} />
                   </div>
-
 
                   {/* <div className="text-white">
                     <img

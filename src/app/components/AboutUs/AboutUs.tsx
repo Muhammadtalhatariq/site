@@ -9,7 +9,7 @@ const AboutUs = () => {
       id="about-me"
     >
       <div className="bg-item bg-image overflow-hidden hidden md:flex" data-animate="">
-        {" "}
+      
         <img src="images/bg-pattern-1.jpg" alt="" />
       </div>
       <div className="container">
