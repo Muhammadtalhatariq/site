@@ -119,6 +119,7 @@ const Footer = () => {
                     width="81"
                     height="20"
                   />
+                  
                 </a>
                 <a className="image-link" href="#">
                   <img
